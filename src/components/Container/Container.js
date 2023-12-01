@@ -5,14 +5,11 @@ import NoteList from "../NoteList/NoteList";
 
 function Container() {
   return (
-    <div className="bg-gray-800  h-screen overflow-scroll">
-      <h1 className="text-center font-semibold font-mono text-4xl mb-12 text-cyan-400 hover:text-cyan-600">
-        Note APP
-      </h1>
-
+    <div className="flex flex-col h-screen overflow-scroll">
+      <h1 className="text-4xl text-center p-4 font-mono">Note APP</h1>
       <Form />
       <hr></hr>
-      <Search />
+      {/* <Search /> */}
       <NoteList />
     </div>
   );

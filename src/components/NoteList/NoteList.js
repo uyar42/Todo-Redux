@@ -40,17 +40,16 @@ function NoteList() {
   const [editingNoteId, setEditingNoteId] = useState(null);
   const [editedText, setEditedText] = useState("");
 
-  const [messageApi, contextHolder] = message.useMessage();
-
   const info = () => {
     editedText && message.success("Değişiklikler kaydedildi!");
   };
 
+  console.log(filtered);
   return (
     <>
-      <div className=" flex justify-center items-center">
+      <div className="flex justify-center items-center">
         <input
-          className="p-2 rounded-lg mt-4"
+          className="p-2 rounded-lg mt-4 bg-slate-200 outline-none font-mono"
           placeholder="Search..."
           onChange={(e) => setSearch(e.target.value)}
         ></input>
@@ -59,9 +58,12 @@ function NoteList() {
         {filtered.length !== 0 ? (
           filtered.map((m) => (
             <div className="flex flex-row mt-2 mr-24 ">
-              <div className={`bg-${m.color}-700 p-4 m-2 rounded-lg `}>
+              <div
+                style={{ backgroundColor: `#${m.color}` }}
+                className={` p-4 m-2 rounded-lg border-2`}
+              >
                 <p className="text-2xl">{m.title}</p>
-                <span>{m.text}</span>
+                <span className="">{m.text}</span>
                 {m.text !== "" && (
                   <>
                     <button
@@ -96,7 +98,7 @@ function NoteList() {
             </div>
           ))
         ) : (
-          <h2></h2>
+          <h2 className="m-auto"></h2>
         )}
       </div>
     </>
