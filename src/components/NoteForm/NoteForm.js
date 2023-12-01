@@ -14,14 +14,16 @@ function NoteForm() {
   const handleForm = (e) => {
     if (text) {
       e.preventDefault();
-      dispatch(add({ id: nanoid(), title, text, color: color }));
+      dispatch(
+        add({ id: nanoid(), title: title.toUpperCase(), text, color: color })
+      );
       setTitle("");
       setText("");
     }
   };
 
   const inputClass =
-    "p-4 rounded-md outline-none font-semibold border-2 mb-4 w-1/3";
+    "p-4 rounded-md outline-none font-semibold border-2 mb-4 w-1/3 ";
 
   const handleColorChange = (color, hex) => {
     let koko = hex.replace("#", " ").trim();
@@ -30,7 +32,7 @@ function NoteForm() {
   };
 
   return (
-    <div className="flex flex-col items-center bg-slate-300 p-8 ">
+    <div className="flex flex-col items-center bg-slate-300 p-6 ">
       <form className="w-full" onSubmit={handleForm}>
         <div className="flex flex-col justify-center items-center m-4">
           <input

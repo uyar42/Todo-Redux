@@ -5,8 +5,8 @@ import NoteList from "../NoteList/NoteList";
 
 function Container() {
   return (
-    <div className="flex flex-col h-screen overflow-scroll">
-      <h1 className="text-4xl text-center p-4 font-mono">Note APP</h1>
+    <div className="flex flex-col h-screen overflow-scroll ">
+      <h1 className="text-4xl text-center p-4 font-mono ">Note APP</h1>
       <Form />
       <hr></hr>
       {/* <Search /> */}

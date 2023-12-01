@@ -57,7 +57,7 @@ function NoteList() {
       <div className="flex flex-row flex-wrap items-center ">
         {filtered.length !== 0 ? (
           filtered.map((m) => (
-            <div className="flex flex-row mt-2 mr-24 ">
+            <div className="flex flex-row mt-2  ">
               <div
                 style={{ backgroundColor: `#${m.color}` }}
                 className={` p-4 m-2 rounded-lg border-2`}
